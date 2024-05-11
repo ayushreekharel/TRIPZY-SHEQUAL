@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Products</title>
+    <style>
+        body {
+            background-color: teal;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            padding: 20px;
+            border-radius: 6px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            width: 420px;
+        }
+
+        label {
+            margin-bottom: 10px;
+        }
+
+        input {
+            margin-bottom: 15px;
+            padding: 8px;
+            width: 100%;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: teal;
+            color: white;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #006d6d;
+        }
+    </style>
+</head>
+<body>
+
+<form action="/receiver" method="post">
+    <label for="r_source">What is you current location?</label>
+    <input type="text" id="r_source" name="r_source" required>
+    <label for="r_destination">Where are you going?</label>
+    <input type="text" id="r_destination" name="r_destination" required>
+    <label for="r_weight">How much weight of products you can adjust on your luggage?</label>
+    <input type="number" id="r_weight" name="r_weight" required>
+    <input type="submit" value="Enter">
+</form>
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Photos</title>
+    <style>
+        body {
+            background-color: teal;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        form {
+            background-color: rgb(29, 107, 196);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="file"] {
+            margin-bottom: 20px;
+        }
+
+        button[type="submit"] {
+            background-color: teal;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #007d7b;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="/upload_photos" method="post" enctype="multipart/form-data">
+        <h1>Upload Citizenship and Passport Photos</h1>
+        <label for="citizenship_photo">Citizenship Photo (JPEG, PNG, GIF):</label>
+        <input type="file" id="citizenship_photo" name="citizenship_photo" accept="image/jpeg, image/png, image/gif" >
+        <br>
+        <label for="passport_photo">Passport Photo (JPEG, PNG, GIF):</label>
+        <input type="file" id="passport_photo" name="passport_photo" accept="image/jpeg, image/png, image/gif" >
+        <br>
+        <label for="photo">Your Photo (JPEG, PNG, GIF):</label>
+        <input type="file" id="photo" name="photo" accept="image/jpeg, image/png, image/gif" >
+        <br>
+        <button type="submit">Upload Photos</button>
+    </form>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                {% if category == 'success' %}
+                    <div class="success">{{ message }}</div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+</body>
+
+</html>
+
+

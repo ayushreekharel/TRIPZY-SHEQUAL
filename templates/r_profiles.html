@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profiles</title>
+    <style>
+        body {
+            background-color: teal;
+            font-family: Arial, sans-serif; /* Set font family */
+            padding: 20px; /* Add padding */
+        }
+        .user-profile {
+            background-color: #ffffff; /* Set background color for user profile */
+            border-radius: 10px; /* Add border radius */
+            padding: 15px; /* Add padding */
+            margin-bottom: 20px; /* Add margin bottom */
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add box shadow */
+        }
+        .message-form {
+            margin-top: 10px;
+        }
+        .message-form textarea {
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 5px;
+        }
+        .message-form button {
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>User Profiles</h1>
+    <ul>
+        {% for user_row in user_data %}
+            <li class="user-profile">
+                <strong>Username:</strong> {{ user_row[0] }}<br>
+                <strong>Destination:</strong> {{ user_row[1] }}<br>
+                <strong>Source:</strong> {{ user_row[2] }}<br>
+                <strong>Weight:</strong> {{ user_row[3] }}kg<br>
+                <form action="{{ url_for('send_message', username=user_row[0]) }}" method="POST" class="message-form">
+                    <input type="hidden" name="username" value="{{ user_row[0] }}">
+                    <input type="hidden" name="destination" value="{{ user_row[1] }}">
+                    <button type="submit">Send Message</button>
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/loginCss.css') }}">
+</head>
+
+<body>
+
+
+    <!-- <a href="#" class="about-us">About Us</a>
+
+    
+    <div class="about-us-info">
+        <h3>About TRIPZY</h3>
+        <p>Welcome to TRIPZY, where we bridge the gap between travelers with available luggage 
+            space and individuals seeking affordable package delivery solutions. At TRIPZY, we understand the need for efficient and cost-effective shipping options, whether it's sending gifts to loved ones, 
+            delivering important documents, or transporting goods.</p>
+    </div> -->
+
+    <h2>TRIPZY</h2>
+    <h3>Linking Luggage, Sharing Smiles</h3>
+
+    <form action="/form_login" method="post">
+
+
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+        <input type="submit" value="Login">
+    </form>
+
+    <h6>Don't have an account?</h6>
+    <a href="/create_account">Sign up</a>
+
+    {% if error %}
+    <p style="color: rgb(19, 9, 9);font-weight: bold; font-size: 18px;">{{ error }}</p>
+    {% endif %}
+
+
+    <h1>{{info}}</h1>
+</body>
+
+</html>

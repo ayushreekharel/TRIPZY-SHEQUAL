@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features </title>
+    <style>
+        .features {
+            background: linear-gradient(45deg, #ff6b6b, #556270);
+            color: #fff;
+            padding: 50px 0;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .features .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .features h3 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .features ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .features li {
+            font-size: 24px;
+            margin-bottom: 10px;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .features li::before {
+            content: "\2022"; /* Bullet character */
+            color: #fff;
+            margin-right: 10px;
+            position: absolute;
+            left: -20px;
+            transition: transform 0.3s ease;
+        }
+
+        .features li:hover {
+            transform: scale(1.1);
+        }
+
+        .features li:hover::before {
+            transform: scale(1.5);
+        }
+    </style>
+</head>
+<body>
+
+<section class="features">
+    <div class="container">
+        <h3>Key Features</h3>
+        <ul>
+            <li>Fast Delivery</li>
+            <li>Secure</li>
+            <li>Real-time Tracking</li>
+            <li>Cheaper</li>
+        </ul>
+    </div>
+</section>
+
+</body>
+</html>

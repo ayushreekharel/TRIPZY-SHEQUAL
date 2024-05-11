@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messaging Interface</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .message-area {
+            height: 300px;
+            overflow-y: auto;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+
+        .message {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        .message.sent {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .message.received {
+            background-color: #28a745;
+            color: #fff;
+        }
+
+        .input-area {
+            display: flex;
+            align-items: center;
+        }
+
+        .input-area textarea {
+            flex: 1;
+            height: 50px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: none;
+            margin-right: 10px;
+            font-size: 16px;
+        }
+
+        .input-area button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .input-area button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="message-area" id="messageArea">
+            <!-- Messages will be displayed here -->
+        </div>
+        <div class="input-area">
+            <textarea id="messageInput" rows="1" placeholder="Type your message..." required></textarea>
+            <button id="sendMessageButton">Send</button>
+        </div>
+    </div>
+
+    <script>
+        const messageArea = document.getElementById('messageArea');
+        const messageInput = document.getElementById('messageInput');
+        const sendMessageButton = document.getElementById('sendMessageButton');
+
+        // Function to add a new message to the message area
+        function addMessage(message, type) {
+            const messageElement = document.createElement('div');
+            messageElement.classList.add('message', type);
+            messageElement.textContent = message;
+            messageArea.appendChild(messageElement);
+
+            // Scroll to the bottom of the message area
+            messageArea.scrollTop = messageArea.scrollHeight;
+        }
+
+        // Event listener for the send message button
+        sendMessageButton.addEventListener('click', function() {
+            const message = messageInput.value.trim();
+            if (message !== '') {
+                // Add the message to the message area as sent
+                addMessage(message, 'sent');
+
+                // Clear the message input
+                messageInput.value = '';
+
+                // Simulate a received message after a short delay (for demonstration purposes)
+                setTimeout(function() {
+                    addMessage('This is a received message.', 'received');
+                }, 1000);
+            }
+        });
+    </script>
+</body>
+</html>
+
