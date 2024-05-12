@@ -6,7 +6,7 @@ from config import Config
 app=Flask(__name__)
 app.config.from_object(Config)
 mysql=MySQL(app)
-app.secret_key = '@yushr@@'
+app.secret_key = '*****'
 
 
 @app.route('/')
