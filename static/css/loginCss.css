@@ -1,5 +1,5 @@
         body {
-            background-color: teal;
+            background-color: rgb(213, 225, 225);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -15,7 +15,7 @@
 
         label {
             display: block;
-            color: white;
+            color: rgb(0, 0, 0);
             margin-bottom: 5px;
         }
 
@@ -34,8 +34,8 @@
             padding: 10px;
             border: none;
             border-radius: 5px;
-            background-color: #00796b;
-            color: white;
+            background-color: #60a69e;
+            color: rgb(0, 0, 0);
             cursor: pointer;
         }
 
@@ -44,7 +44,7 @@
         }
 
         a {
-            color: white;
+            color: rgb(53, 43, 192);
             text-align: center;
             display: block;
         }
@@ -58,7 +58,7 @@
 
         h2 {
             font-size: 80px;
-            color: #e78822;
+            color: #fe8a05;
             margin-bottom: 5px;
         }
 
@@ -71,6 +71,6 @@
 
         h6 {
             font-size: 20px;
-            color: white;
+            color: rgb(0, 0, 0);
             margin-bottom: 5px;
         }

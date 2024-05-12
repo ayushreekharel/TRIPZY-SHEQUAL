@@ -3,72 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Features </title>
+    <title>Features</title>
     <style>
-        .features {
-            background: linear-gradient(45deg, #ff6b6b, #556270);
-            color: #fff;
-            padding: 50px 0;
-            text-align: center;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .features .container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .features h3 {
-            font-size: 36px;
-            margin-bottom: 20px;
-            color: #fff;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        .features ul {
-            list-style: none;
-            padding: 0;
+        body {
+            display: flex;
+            background-color: #ccc4c4;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
             margin: 0;
         }
 
-        .features li {
-            font-size: 24px;
-            margin-bottom: 10px;
+        .container {
+            text-align: center;
+        }
+
+        .h2 {
+            font-size: 50px; 
+            color: #000000;
+            margin-bottom: 2cm;
+        }
+
+        .keywords-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .keyword {
             position: relative;
-            transition: transform 0.3s ease;
+            margin: 10px;
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            transition: all 0.3s ease;
         }
 
-        .features li::before {
-            content: "\2022"; /* Bullet character */
-            color: #fff;
-            margin-right: 10px;
+        .keyword:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .keyword-main {
+            font-weight: bold;
+            color: #333;
+            cursor: pointer;
+            font-size: 18px; 
+        }
+
+        .keyword-description {
+            display: none;
             position: absolute;
-            left: -20px;
-            transition: transform 0.3s ease;
+            top: calc(100% + 10px);
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+            width: 250px;
+            background-color: #d9d9d9;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: opacity 0.3s ease;
+            opacity: 0;
         }
 
-        .features li:hover {
-            transform: scale(1.1);
-        }
-
-        .features li:hover::before {
-            transform: scale(1.5);
+        .keyword:hover .keyword-description {
+            display: block;
+            opacity: 1;
         }
     </style>
 </head>
 <body>
-
-<section class="features">
     <div class="container">
-        <h3>Key Features</h3>
-        <ul>
-            <li>Fast Delivery</li>
-            <li>Secure</li>
-            <li>Real-time Tracking</li>
-            <li>Cheaper</li>
-        </ul>
-    </div>
-</section>
+        <div class="h2">Key Features</div> 
+        <div class="keywords-container">
+            <div class="keyword">
+                <span class="keyword-main">Cost-Effectiveness</span>
+                <span class="keyword-description">The platform typically offers more affordable shipping options compared to traditional courier services, as travelers may be willing to transport items for a lower fee in exchange for extra luggage space.</span>
+            </div>
+            
+            <div class="keyword">
+                <span class="keyword-main">Personalized Service</span>
+                <span class="keyword-description">Users have the opportunity to negotiate prices and terms directly with travelers, allowing for more personalized and flexible shipping arrangements tailored to their specific needs.</span>
+            </div>
+            
+            <div class="keyword">
+                <span class="keyword-main">Fast Delivery</span>
+                <span class="keyword-description">Depending on the traveler's itinerary, items may be delivered more quickly than through traditional courier services, especially for urgent or time-sensitive shipments.</span>
+            </div>
 
+            <div class="keyword">
+                <span class="keyword-main">Global Reach</span>
+                <span class="keyword-description">The platform connects users with travelers from around the world, expanding the reach to destinations where traditional courier services may be limited or costly.</span>
+            </div>
+
+            <div class="keyword">
+                <span class="keyword-main">Reduced Carbon Footprint</span>
+                <span class="keyword-description">By utilizing available luggage space in travelers' suitcases, the platform promotes a more sustainable shipping method that reduces the need for additional packaging and transportation resources.</span>
+            </div>
+
+            <div class="keyword">
+                <span class="keyword-main">Supporting Travelers</span>
+                <span class="keyword-description">By choosing this platform, users can directly support travelers by providing them with an opportunity to earn extra income while traveling.</span>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
